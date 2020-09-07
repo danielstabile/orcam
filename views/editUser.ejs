@@ -1,0 +1,37 @@
+<%- include ('partials/header.ejs'); %>
+<body>
+    <%- include ('partials/navbar.ejs'); %>
+    <div class="container">
+        <div class="card" id="forEditUser">
+            <div class="card-header">
+                <h3>Consulta Usuário</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <label>Login</label>
+                    <input type="text" class="form-control" name="login" readonly="true" value=<%= user.login %>>
+                    <label>Senha</label>
+                    <input type="password" class="form-control" name="password" readonly="true" value=<%= user.password %>>
+                    <label>Nome</label>
+                    <input type="text" class="form-control" name="name" readonly="true" value=<%= user.name %>>
+                    <label>E-mail</label>
+                    <input type="text" class="form-control" name="email" readonly="true" value=<%= user.email %>>
+                    <label>Usuário CRM</label>
+                    <input type="text" class="form-control" name="crmUser" readonly="true" value=<%= user.crm_user %>>
+                    <label>Perfil:</label>        
+                
+                    <% if(user.profile === 1){ %>
+                        <select class="form-control" name="profile" disabled="true">
+                            <option value=<%= user.profile %>>Gerente de Produto</option>
+                        </select>
+                    <% } else { %>
+                        <select class="form-control" name="profile" disabled="true">
+                            <option value=<%= user.profile %>>Usuário</option>
+                        </select>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include ('partials/footer.ejs'); %>

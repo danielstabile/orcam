@@ -1,0 +1,19 @@
+<%- include ('partials/header.ejs'); %>
+<body>
+    <%- include ('partials/navbar.ejs'); %>
+    <div class="container">
+
+        <% users.forEach(users => { %>
+
+            <div class="card">
+                <div class="card-body">
+                    <label>Login</label>
+                    <a href="editUser/<%= users.login %>""><h3><%= users.login %></h3></a>
+                </div>
+            </div>
+            
+        <% }) %>
+
+    </div>
+</body>
+<%- include ('partials/footer.ejs'); %>

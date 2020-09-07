@@ -1,0 +1,36 @@
+<%- include ('partials/header.ejs'); %>
+<body>
+    <%- include ('partials/navbar.ejs'); %>
+    <div class="container">
+        <div class="card" id="formNewUser">
+            <div class="card-header">
+                <h3>Novo Usuário</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/saveUser">
+                    <label>Login</label>
+                    <input type="text" placeholder="Login de usuário" class="form-control" name="login" required 
+                           maxlength="30" onkeyup="this.value = this.value.toLowerCase()";>
+                    <label>Senha</label>
+                    <input type="password" class="form-control" name="password" placeholder="Digite sua senha" maxlength="60">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Nome Completo" class="form-control" name="name" maxlength="60">
+                    <label>E-mail</label>
+                    <input type="text" placeholder="E-mail" class="form-control" name="email" maxlength="100">
+                    <label>Usuário CRM</label>
+                    <input type="text" placeholder="Nome de usuário no CRM" class="form-control" name="crmUser" maxlength="100">
+                    <label>Perfil:</label>
+                    
+                    <select class="form-control" name="profile">
+                        <option value="1">Gerente de Produto</option>
+                        <option value="2" selected="selected">Usuário</option>
+                    </select>
+                    
+                    <button class="btn btn-primary" name="saveBtn" type="submit">Salvar</button>
+                    <button class="btn btn-danger" name="cancelBtn" type="reset">Limpar</button>                       
+                </form>                
+            </div>
+        </div>
+    </div>
+</body>
+<%- include ('partials/footer.ejs'); %>
